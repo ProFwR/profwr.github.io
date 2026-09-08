@@ -1,0 +1,193 @@
+/* ============================================
+   COMPONENTS - Additional component styles
+   ============================================ */
+
+/* ---- Focus States (Accessibility) ---- */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ---- Selection ---- */
+.tag:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+}
+
+.tag--light:hover {
+  border-color: var(--color-accent);
+  color: var(--color-text-inverse);
+  background: rgba(59, 91, 219, 0.15);
+}
+
+/* ---- Nav scroll progress (visual indicator) ---- */
+.nav__progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width 100ms linear;
+  border-radius: 0 1px 1px 0;
+}
+
+/* ---- Card depth layer ---- */
+.dark-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity var(--duration-medium) var(--ease-smooth);
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(59, 91, 219, 0.06),
+    transparent 40%
+  );
+  pointer-events: none;
+}
+
+.dark-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.dark-card:hover::before {
+  opacity: 1;
+}
+
+/* ---- Dashboard mockup micro-interactions ---- */
+.dashboard-mockup .mockup-nav-item.active {
+  position: relative;
+}
+
+.dashboard-mockup .mockup-nav-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 60%;
+  background: var(--color-accent);
+  border-radius: 1px;
+}
+
+/* ---- Diagram subtle pulse ---- */
+.diagram__cell--highlight {
+  animation: cellPulse 3s var(--ease-in-out) infinite;
+}
+
+@keyframes cellPulse {
+  0%, 100% { background: var(--color-accent-light); }
+  50% { background: rgba(59, 91, 219, 0.12); }
+}
+
+/* ---- Think step hover glow ---- */
+.think-step__icon::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, var(--color-accent-glow), transparent 70%);
+  opacity: 0;
+  transition: opacity var(--duration-medium) var(--ease-smooth);
+  pointer-events: none;
+}
+
+.think-step:hover .think-step__icon::after {
+  opacity: 1;
+}
+
+.think-step__icon {
+  position: relative;
+}
+
+/* ---- Contact link underline reveal ---- */
+.contact-link__value {
+  position: relative;
+  display: inline-block;
+}
+
+.contact-link__value::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-text-primary);
+  transition: width var(--motion-medium);
+}
+
+.contact-link:hover .contact-link__value::after {
+  width: 100%;
+}
+
+/* ---- Project card arrow indicator ---- */
+.project-card::after {
+  content: '\2192';
+  position: absolute;
+  top: var(--space-6);
+  right: var(--space-6);
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all var(--duration-medium) var(--ease-smooth);
+}
+
+.project-card {
+  position: relative;
+}
+
+.project-card:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ---- Path list hover indicator ---- */
+.path-list__item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 0;
+  background: var(--color-accent);
+  border-radius: 2px;
+  transition: height var(--duration-medium) var(--ease-smooth);
+}
+
+.path-list__item {
+  position: relative;
+}
+
+.path-list__item:hover::before,
+.path-list__item--active::before {
+  height: 60%;
+}

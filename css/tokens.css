@@ -1,0 +1,149 @@
+/* ============================================
+   DESIGN SYSTEM TOKENS
+   ============================================ */
+
+:root {
+  /* ---- Colors: Palette ---- */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-bg-primary: #fafafa;
+  --color-bg-secondary: #ffffff;
+  --color-bg-dark: #0b0b0f;
+  --color-bg-dark-card: #141419;
+  --color-bg-dark-hover: #1a1a22;
+
+  --color-text-primary: #111111;
+  --color-text-secondary: #555555;
+  --color-text-tertiary: #888888;
+  --color-text-muted: #aaaaaa;
+  --color-text-inverse: #f0f0f0;
+  --color-text-inverse-secondary: #999999;
+
+  --color-accent: #3b5bdb;
+  --color-accent-hover: #4c6ef5;
+  --color-accent-light: rgba(59, 91, 219, 0.08);
+  --color-accent-glow: rgba(59, 91, 219, 0.15);
+
+  --color-border: #e8e8e8;
+  --color-border-light: #f0f0f0;
+  --color-border-dark: #222228;
+  --color-border-dark-hover: #333340;
+
+  /* ---- Typography ---- */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.75rem;
+  --text-5xl: 3.5rem;
+  --text-6xl: 4.25rem;
+
+  --leading-tight: 1.1;
+  --leading-snug: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  --tracking-tight: -0.03em;
+  --tracking-normal: -0.01em;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.1em;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ---- Spacing ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  --space-40: 10rem;
+
+  /* ---- Layout ---- */
+  --container-max: 1140px;
+  --container-wide: 1280px;
+  --container-narrow: 720px;
+  --container-padding: clamp(1.25rem, 4vw, 3rem);
+  --section-gap: clamp(5rem, 10vw, 8rem);
+
+  /* ---- Radii ---- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-full: 9999px;
+
+  /* ---- Shadows ---- */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.12);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  --shadow-dark-card: 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --shadow-dark-card-hover: 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.08);
+
+  /* ---- Motion: Durations ---- */
+  --duration-instant: 0ms;
+  --duration-micro: 120ms;
+  --duration-small: 200ms;
+  --duration-medium: 350ms;
+  --duration-large: 500ms;
+  --duration-slow: 700ms;
+  --duration-entrance: 600ms;
+
+  /* ---- Motion: Easing ---- */
+  --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.1, 1);
+
+  /* ---- Motion: Presets ---- */
+  --motion-micro: var(--duration-micro) var(--ease-out);
+  --motion-small: var(--duration-small) var(--ease-out);
+  --motion-medium: var(--duration-medium) var(--ease-out-quart);
+  --motion-large: var(--duration-large) var(--ease-out-quart);
+  --motion-entrance: var(--duration-entrance) var(--ease-out-quart);
+
+  /* ---- Z-index ---- */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+}
+
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-instant: 0ms;
+    --duration-micro: 0ms;
+    --duration-small: 0ms;
+    --duration-medium: 0ms;
+    --duration-large: 0ms;
+    --duration-slow: 0ms;
+    --duration-entrance: 0ms;
+  }
+}
